@@ -1,0 +1,58 @@
+###############################################################################
+#
+# getFASTA function
+#
+# input: 1. a dictionary whose keys are the accession IDs and whose values
+#       are a tuple (taxonID, sequence) matching the accession ID. So, entries
+#       in the dictionary look like:
+#           {accID : (taxID, sequence),
+#            accID : (taxID, sequence),
+#            ...
+#           }
+#
+# output: 1. a FASTA formatted string whose entries are of the form:
+#       > accID_taxID
+#       sequence
+#       > accID_taxID
+#       sequence
+#       ...
+#
+### YOU NEED TO EDIT THIS PART ###
+#1. define your function using the correct name and argument
+#2. within the function, create a string that will contain the FASTA-formatted
+#   data in the input dictionary
+#3. for each accID in the dictionary, extract the corresponding (taxID, sequence)
+#   value, format it correctly for FASTA and append the entry to the result string
+#4. return the result string
+cds_sequencedata = {
+        'Seq1':('t1','AAATGAT'),
+        'Seq2':('t1','AACTGAG'),
+        'Seq3':('t2','AAGACCT')
+         }
+
+def getFASTA (cds_sequencedata):
+    results_string = ''
+
+    for (k,v) in cds_sequencedata.items():
+        formatted_entry = '>%s_%s\n'%(k,v)
+        results_string += formatted_entry
+
+    return results_string
+#
+# End getFASTA function
+#
+###############################################################################
+
+###############################################################################
+#
+# IGNORE THIS PART
+#
+# It is necessary for the breakout code to work, but you don't need to edit
+# it in any way. You should not change this code
+#
+if __name__ == "__main__":
+
+    cds_sequencedata = {
+        "Seq1":("t1","AAATGAT"),
+        "Seq2":("t1","AACTGAG"),
+"getBLASTseqs.breakout.py" 70L, 1961C                                              44,0-1        Top
